@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[ExecuteInEditMode]
 public class MazeRender : MonoBehaviour
 {
     [SerializeField]
@@ -108,7 +109,7 @@ public class MazeRender : MonoBehaviour
                 {
                     var leftWall = Instantiate(_wallPrefab, transform) as Transform;
                     leftWall.position = position + new Vector3(-_wallWidth / 2, 0, 0);
-                    leftWall.localScale = new Vector3(_wallWidth, leftWall.localScale.y, leftWall.localScale.z);
+                    leftWall.localScale = new Vector3(_wallWidth + 0.1f, leftWall.localScale.y, leftWall.localScale.z);
                     leftWall.eulerAngles = new Vector3(0, 90, 0);
                 }
 
@@ -118,7 +119,7 @@ public class MazeRender : MonoBehaviour
                     {
                         var rightWall = Instantiate(_wallPrefab, transform) as Transform;
                         rightWall.position = position + new Vector3(+_wallWidth / 2, 0, 0);
-                        rightWall.localScale = new Vector3(_wallWidth, rightWall.localScale.y, rightWall.localScale.z);
+                        rightWall.localScale = new Vector3(_wallWidth + 0.1f, rightWall.localScale.y, rightWall.localScale.z);
                         rightWall.eulerAngles = new Vector3(0, 90, 0);
                     }
                 }
